@@ -1,0 +1,672 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: "Segoe UI", sans-serif;
+    background:#08030a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Animated background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+      radial-gradient(circle at 20% 20%, #ff2f7040, transparent 30%),
+      radial-gradient(circle at 80% 70%, #ff006640, transparent 30%),
+      linear-gradient(135deg,#090009,#220014,#090009);
+    animation:bgMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove{
+    from{filter:hue-rotate(0deg);}
+    to{filter:hue-rotate(25deg);}
+}
+
+/* Hearts */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:22px;
+    animation:floatHeart linear forwards;
+    pointer-events:none;
+    z-index:10;
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) scale(.5) rotate(0);
+        opacity:0;
+    }
+    15%{opacity:1;}
+    100%{
+        transform:translateY(-110vh) scale(1.4) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px 20px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp 1.5s ease;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid #ff6b9d;
+    border-radius:50px;
+    color:#ffb2ca;
+    margin-bottom:25px;
+    background:#ff3d7d15;
+}
+
+h1{
+    font-size:clamp(45px,10vw,100px);
+    line-height:1;
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#fff,#ff82ad,#fff);
+    background-size:200%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 3s linear infinite;
+}
+
+@keyframes shine{
+    to{background-position:200%;}
+}
+
+.hero p{
+    font-size:20px;
+    color:#ffd8e5;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 30px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#ff2f70,#ff0055);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 30px #ff246b80;
+    transition:.3s;
+    cursor:pointer;
+    border:0;
+    font-size:16px;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.04);
+    box-shadow:0 0 45px #ff246baa;
+}
+
+/* Sections */
+section{
+    padding:90px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:45px;
+    color:#ff9fbd;
+}
+
+.card{
+    background:#ffffff0b;
+    border:1px solid #ffffff18;
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:35px;
+    margin-bottom:30px;
+    box-shadow:0 20px 60px #00000050;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#ff669744;
+}
+
+.card p{
+    font-size:18px;
+    line-height:2;
+    color:#ffe7ef;
+}
+
+.highlight{
+    color:#ff8eb1;
+    font-weight:bold;
+}
+
+/* Poetry */
+.poetry{
+    text-align:center;
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:23px !important;
+    color:#ffd5e2 !important;
+    line-height:2.1 !important;
+}
+
+/* Gallery */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+}
+
+.photo{
+    height:280px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    background:#ffffff10;
+    border:1px solid #ffffff20;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.photo:hover img{
+    transform:scale(1.1);
+}
+
+.photo span{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:18px;
+    background:linear-gradient(transparent,#000);
+    text-align:center;
+}
+
+/* Final */
+.final{
+    text-align:center;
+    min-height:80vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.final h2{
+    font-size:clamp(40px,8vw,75px);
+    color:#ff8eb1;
+    text-shadow:0 0 30px #ff2f70;
+}
+
+.infinity{
+    font-size:70px;
+    margin:20px;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.2);}
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#ffb5c9;
+    border-top:1px solid #ffffff10;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Music button */
+.music{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:1px solid #ff8eaf;
+    background:#ff2f7030;
+    color:white;
+    font-size:22px;
+    z-index:20;
+    cursor:pointer;
+}
+
+/* Mobile */
+@media(max-width:600px){
+    section{
+        padding:65px 16px;
+    }
+
+    .card{
+        padding:25px 20px;
+    }
+
+    .card p{
+        font-size:16px;
+    }
+
+    .poetry{
+        font-size:19px !important;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .photo{
+        height:220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+
+        <div class="badge">🎂 A Special Day For A Special Person ❤️</div>
+
+        <h1>Happy Birthday<br>My Love ❤️</h1>
+
+        <p id="typing"></p>
+
+        <a href="#letter" class="btn">Open My Heart 💌</a>
+
+    </div>
+</header>
+
+
+<!-- LOVE LETTER -->
+<section id="letter">
+
+    <h2 class="section-title">💌 My Birthday Letter</h2>
+
+    <div class="card">
+
+        <p>
+        Aaj ka din mere liye sirf tumhara birthday nahi hai… 🥹❤️
+        Aaj woh din hai jis din meri duniya mein woh shakhs aaya
+        tha jisne meri zindagi ko aur bhi khoobsurat bana diya. 🌍💖
+        </p>
+
+        <br>
+
+        <p>
+        Tum meri zindagi ka woh haseen hissa ho jiske bina sab kuch
+        adhoora sa lagta hai. 🫶🏻✨
+        </p>
+
+        <br>
+
+        <p>
+        Mujhe nahi pata ke main apni feelings ko lafzon mein kitna
+        achay se bayan kar paunga, lekin ek baat dil se kehna chahta hoon…
+        <span class="highlight">I love you so much. ❤️🥺</span>
+        </p>
+
+        <br>
+
+        <p>
+        Tumhari smile mere liye duniya ki sabse khoobsurat cheez hai 😊❤️,
+        tumhari awaaz mere liye sukoon hai 🎶💕 aur tumhara mere saath
+        hona mere liye kisi blessing se kam nahi. 🥹🤍
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- POETRY -->
+<section>
+
+    <h2 class="section-title">🌹 Tumhare Naam 🌹</h2>
+
+    <div class="card">
+
+        <p class="poetry">
+        “Tum mile toh laga zindagi haseen hai,<br>
+        Tum saath ho toh har khushi rangeen hai,<br>
+        Tumhari muskurahat meri jaan hai,<br>
+        Aur tum… meri mohabbat ka sabse khoobsurat naam ho. ❤️”
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- HER IMPORTANCE -->
+<section>
+
+    <h2 class="section-title">❤️ You Mean The World To Me</h2>
+
+    <div class="card">
+
+        <p>
+        Tum mere liye sirf meri girlfriend nahi ho…
+        tum meri <span class="highlight">best friend</span>,
+        meri happiness, meri safe place aur meri favourite person ho. 🫂💗
+        </p>
+
+        <br>
+
+        <p>
+        Kabhi kabhi main sochta hoon ke tum meri life mein na hoti
+        toh shayad mujhe pata hi na chalta ke kisi ek insan ki presence
+        bhi poori duniya ko itna beautiful bana sakti hai. 🥺🌎❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DUA -->
+<section>
+
+    <h2 class="section-title">🤲🏻 My Birthday Dua For You</h2>
+
+    <div class="card">
+
+        <p>
+        Aaj tumhare birthday par meri dua hai ke Allah tumhari zindagi
+        ko hamesha khushiyon se bhar de. 🤲🏻❤️
+        </p>
+
+        <br>
+
+        <p>
+        Tumhari aankhon mein kabhi aansu na aaye,
+        tumhari smile kabhi kam na ho,
+        tumhara har dream poora ho aur tumhe zindagi mein woh har
+        khushi mile jiski tum deserve karti ho. 🌸✨
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SORRY / PROMISE -->
+<section>
+
+    <h2 class="section-title">🥺 One Little Promise</h2>
+
+    <div class="card">
+
+        <p>
+        Aur agar kabhi meri wajah se tumhara dil dukha ho,
+        toh <span class="highlight">I’m truly sorry. 🥺❤️</span>
+        </p>
+
+        <br>
+
+        <p>
+        Main perfect nahi hoon, lekin tumhare liye behtar banne ki
+        koshish hamesha karta rahunga.
+        </p>
+
+        <br>
+
+        <p>
+        Main chahta hoon ke hum sirf achay moments nahi,
+        balki mushkil waqt bhi ek dusre ka haath pakar kar guzarein. 🤝🏻❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SECOND POETRY -->
+<section>
+
+    <div class="card">
+
+        <p class="poetry">
+        “Na chand chahiye, na sitaron ki khwahish hai,<br>
+        Bas tum mere paas raho, itni si khwahish hai.<br>
+        Har janam mein tum hi meri mohabbat bano,<br>
+        Bas dil ki yahi sabse khoobsurat farmaish hai. ❤️🌙”
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+<section>
+
+    <h2 class="section-title">📸 Our Beautiful Memories</h2>
+
+    <div class="gallery">
+
+        <!-- Apni photos yahan change karo -->
+        <div class="photo">
+            <img src="images/photo1.jpg" alt="Our Memory">
+            <span>Our Beautiful Memory ❤️</span>
+        </div>
+
+        <div class="photo">
+            <img src="images/photo2.jpg" alt="Our Memory">
+            <span>My Favourite Smile 🥹❤️</span>
+        </div>
+
+        <div class="photo">
+            <img src="images/photo3.jpg" alt="Our Memory">
+            <span>Forever Special 🌹</span>
+        </div>
+
+        <div class="photo">
+            <img src="images/photo4.jpg" alt="Our Memory">
+            <span>A Moment To Remember ✨</span>
+        </div>
+
+        <div class="photo">
+            <img src="images/photo5.jpg" alt="Our Memory">
+            <span>My Favourite Person 💕</span>
+        </div>
+
+        <div class="photo">
+            <img src="images/photo6.jpg" alt="Our Memory">
+            <span>Us ❤️♾️</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+<section class="final">
+
+    <div class="badge">🎀 From My Heart To Yours 🎀</div>
+
+    <h2>Happy Birthday<br>My Jaan ❤️</h2>
+
+    <div class="infinity">♾️</div>
+
+    <p style="font-size:20px;line-height:1.8;max-width:700px;">
+        I love you today. ❤️<br>
+        I loved you yesterday. ❤️<br>
+        I’ll love you tomorrow. ❤️<br>
+        And I’ll keep loving you for every beautiful moment
+        that life gives us. 🫂♾️❤️
+    </p>
+
+    <button class="btn" onclick="surprise()">
+        Click For A Surprise 🎁
+    </button>
+
+</section>
+
+
+<footer>
+    🌹 Made with love, just for you ❤️
+</footer>
+
+
+<!-- MUSIC BUTTON -->
+<button class="music" onclick="toggleMusic()">🎵</button>
+
+<audio id="music" loop>
+    <!-- Apni romantic music file yahan rakho -->
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* Typing effect */
+
+const text =
+"To the most beautiful person in my world… today is all about you. ❤️";
+
+let i = 0;
+
+function typeWriter(){
+
+    if(i < text.length){
+
+        document.getElementById("typing").innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,45);
+
+    }
+
+}
+
+typeWriter();
+
+
+/* Floating hearts */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["❤️","💖","💕","💗","💓","🌹","✨"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.animationDuration =
+        (4 + Math.random()*5) + "s";
+
+    heart.style.fontSize =
+        (15 + Math.random()*25) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+}
+
+setInterval(createHeart,500);
+
+
+/* Music */
+
+const music = document.getElementById("music");
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play().catch(()=>{});
+
+        document.querySelector(".music").innerHTML="⏸️";
+
+    }else{
+
+        music.pause();
+
+        document.querySelector(".music").innerHTML="🎵";
+
+    }
+
+}
+
+
+/* Surprise */
+
+function surprise(){
+
+    for(let i=0;i<40;i++){
+
+        setTimeout(createHeart,i*80);
+
+    }
+
+    alert(
+        "❤️ I LOVE YOU SO MUCH ❤️\n\n" +
+        "Happy Birthday Meri Jaan! 🎂🥹\n\n" +
+        "You are one of the most beautiful parts of my life. 🌹❤️"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
